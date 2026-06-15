@@ -27,18 +27,18 @@
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/liyongzheng666/print-tool">🖨️ print-tool · 打印工具</a></h4>
-      <p>A 3D model viewer & print toolkit built on <b>OpenCASCADE (OCCT)</b> — parse, preview and process geometry in the browser.</p>
+      <h4><a href="https://github.com/liyongzheng666/Print">🖨️ Print · 打印工具</a></h4>
+      <p>A 3D model viewer & print toolkit built on <b>OpenCASCADE (OCCT)</b> — parse, preview and process geometry right in the browser.</p>
       <p>
-        <img src="https://img.shields.io/github/stars/liyongzheng666/print-tool?style=flat&logo=github" />
+        <img src="https://img.shields.io/github/stars/liyongzheng666/Print?style=flat&logo=github" />
         <img src="https://img.shields.io/badge/type-CAD%20Tool-7c5cff" />
       </p>
     </td>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/liyongzheng666/ai-geometry-course">📐 ai-geometry-course · AI 几何课程</a></h4>
-      <p>An <b>AI-assisted course on computational geometry</b> for CAD — notes, demos and code for geometric modeling fundamentals.</p>
+      <h4><a href="https://github.com/liyongzheng666/geometry-engineer-ai-road">📐 geometry-engineer-ai-road · 几何工程师的 AI 之路</a></h4>
+      <p>A <b>12-week AI-productivity course</b> for geometric-modeling algorithm engineers — verification loops, degenerate-input defense, and context injection. （几何算法工程师的 AI 之路）</p>
       <p>
-        <img src="https://img.shields.io/github/stars/liyongzheng666/ai-geometry-course?style=flat&logo=github" />
+        <img src="https://img.shields.io/github/stars/liyongzheng666/geometry-engineer-ai-road?style=flat&logo=github" />
         <img src="https://img.shields.io/badge/type-Course-d97757" />
       </p>
     </td>
