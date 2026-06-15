@@ -22,7 +22,11 @@
 | 🧱 **特征建模** Feature Modeling | 拉伸 Extrude · 旋转 Revolve · 扫描 Sweep |
 | 🔁 **参数化** Parametric | 阵列 Pattern · 镜像 Mirror |
 | ✏️ **直接建模** Direct Modeling | 拔模 Draft · 圆角 Fillet |
-| 🤖 **在研 R&D** | 几何内核缺陷自动排查 Agent |
+
+> [!IMPORTANT]
+> **🔬 在研 R&D · Work in Progress** — 几何内核缺陷自动排查 Agent
+>
+> Building an Agent that **auto-detects defects in geometric modeling kernels** — verification loops · degenerate-input defense · context injection.
 
 ---
 
@@ -51,11 +55,18 @@
 
 ---
 
-### 🛠️ Languages & Tools
+### 🛠️ Skills & Tools
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=cpp,python,c,cmake,git,linux,qt,vim" />
-</p>
+<table>
+  <tr>
+    <td width="52%" align="center" valign="middle">
+      <img width="100%" src="https://quickchart.io/chart?c=%7B%22type%22%3A%22radar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%5B%22Feature%22%2C%22Modeling%22%5D%2C%22Parametric%22%2C%5B%22Direct%22%2C%22Modeling%22%5D%2C%5B%22Geometry%22%2C%22Algorithms%22%5D%2C%22C%2B%2B%22%2C%5B%22AI+%2F%22%2C%22Python%22%5D%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B90%2C85%2C82%2C84%2C88%2C76%5D%2C%22borderColor%22%3A%22%237aa2f7%22%2C%22backgroundColor%22%3A%22rgba%28122%2C162%2C247%2C0.35%29%22%2C%22borderWidth%22%3A2%2C%22pointBackgroundColor%22%3A%22%23bb9af7%22%2C%22pointBorderColor%22%3A%22%23bb9af7%22%2C%22pointRadius%22%3A3%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22legend%22%3A%7B%22display%22%3Afalse%7D%7D%2C%22scales%22%3A%7B%22r%22%3A%7B%22min%22%3A0%2C%22max%22%3A100%2C%22ticks%22%3A%7B%22display%22%3Afalse%2C%22stepSize%22%3A25%7D%2C%22grid%22%3A%7B%22color%22%3A%22rgba%28169%2C177%2C214%2C0.25%29%22%7D%2C%22angleLines%22%3A%7B%22color%22%3A%22rgba%28169%2C177%2C214%2C0.25%29%22%7D%2C%22pointLabels%22%3A%7B%22color%22%3A%22%23c0caf5%22%2C%22font%22%3A%7B%22size%22%3A13%7D%7D%7D%7D%7D%7D&backgroundColor=%231a1b27&width=430&height=300&version=4" alt="skill radar" />
+    </td>
+    <td width="48%" align="center" valign="middle">
+      <img src="https://skillicons.dev/icons?i=cpp,python,c,cmake,git,linux,qt,vim&perline=4" alt="tools" />
+    </td>
+  </tr>
+</table>
 
 ---
 
