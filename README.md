@@ -86,7 +86,6 @@
 
 ---
 
-<!-- 🐍 Contribution Snake — 贪吃蛇动画（授予 workflow 权限并运行一次工作流后，取消本段注释即可显示）
 ### 🐍 Contribution Snake
 
 <p align="center">
@@ -98,7 +97,6 @@
 </p>
 
 ---
--->
 
 ### 🔗 Connect
 
