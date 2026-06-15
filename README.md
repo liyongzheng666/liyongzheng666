@@ -15,10 +15,14 @@
 
 ### 🧑‍💻 About me
 
-- 🔭 Currently building **an Agent that auto-detects defects in geometric modeling kernels** （几何建模内核自动排查缺陷 Agent）
-- 🛠️ Experienced in **CAD kernel feature modeling** — extrude / revolve / sweep （拉伸 · 旋转 · 扫描）, parametric **pattern & mirror** （阵列 · 镜像）, and **direct modeling**: draft & fillet （拔模 · 圆角）
-- 🧠 Focus areas: **geometric modeling kernel · parametric design · AI for CAD**
-- ⚡ Tech stack: **C++ & Python**
+> **AI + CAD 造型内核算法工程师** · 几何建模内核 × AI 工程化
+
+| 方向 Domain | 能力 Capabilities |
+| :-- | :-- |
+| 🧱 **特征建模** Feature Modeling | 拉伸 Extrude · 旋转 Revolve · 扫描 Sweep |
+| 🔁 **参数化** Parametric | 阵列 Pattern · 镜像 Mirror |
+| ✏️ **直接建模** Direct Modeling | 拔模 Draft · 圆角 Fillet |
+| 🤖 **在研 R&D** | 几何内核缺陷自动排查 Agent |
 
 ---
 
