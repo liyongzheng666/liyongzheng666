@@ -124,4 +124,4 @@
 
 <p align="center"><sub>⚡ Build kernels · ship fast · stay curious</sub></p>
 
-<!-- Snake & stats auto-refresh every 12h via GitHub Actions · last touched 2026-06-17 -->
+<!-- Snake & stats auto-refresh every 12h via GitHub Actions · last touched 2026-06-17 (rev2) -->
