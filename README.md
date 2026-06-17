@@ -123,3 +123,5 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cff,100:0e75b6&height=120&section=footer" alt="footer" />
 
 <p align="center"><sub>⚡ Build kernels · ship fast · stay curious</sub></p>
+
+<!-- Snake & stats auto-refresh every 12h via GitHub Actions · last touched 2026-06-17 -->
