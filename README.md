@@ -86,17 +86,17 @@
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=liyongzheng666&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=liyongzheng666&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=liyongzheng666&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&v=2" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=liyongzheng666&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&v=2" />
 </p>
 
 <p align="center">
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=liyongzheng666&theme=tokyonight&hide_border=true" alt="streak" />
+  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=liyongzheng666&theme=tokyonight&hide_border=true&v=2" alt="streak" />
 </p>
 
 <!-- 活动折线图（带动画）-->
 <p align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=liyongzheng666&theme=tokyo-night&hide_border=true&area=true" alt="activity graph" />
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=liyongzheng666&theme=tokyo-night&hide_border=true&area=true&v=2" alt="activity graph" />
 </p>
 
 ---
@@ -105,9 +105,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake.svg" />
-    <img alt="github contribution snake animation" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake-dark.svg?v=2" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake.svg?v=2" />
+    <img alt="github contribution snake animation" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/output/github-snake.svg?v=2" />
   </picture>
 </p>
 
