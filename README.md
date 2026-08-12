@@ -1,5 +1,5 @@
 <!-- 头图：自绘 CAD 建模动画（草图 → 拉伸 → 圆角 → 实体，9s 循环）-->
-<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/hero.svg?v=1" alt="Li Yongzheng · AI + CAD Kernel Algorithm Engineer" />
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/hero.svg?v=2" alt="Li Yongzheng · AI + CAD Kernel Algorithm Engineer" />
 
 <h3 align="center">
   <a href="https://github.com/liyongzheng666">

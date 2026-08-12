@@ -27,6 +27,12 @@
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0 H0 V40" fill="none" stroke="#292d47" stroke-width="1"/>
     </pattern>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <style>
@@ -45,6 +51,10 @@
     .float { animation: float 6.5s ease-in-out infinite; }
     @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
 
+    /* 圆角阶段整体放大，突出这一步 */
+    .zoom { transform-origin: 778px 105px; animation: zoom 9s ease-in-out infinite; }
+    @keyframes zoom { 0%,54% { transform: scale(1) } 63% { transform: scale(1.075) } 80% { transform: scale(1.075) } 88%,100% { transform: scale(1) } }
+
     .scan { animation: scan 3.4s ease-in-out infinite; }
     @keyframes scan { 0% { transform: translateY(0); opacity:0 } 12% { opacity:1 } 88% { opacity:1 } 100% { transform: translateY(178px); opacity:0 } }
 
@@ -58,26 +68,39 @@
     @keyframes edgeSeq { 0%,20% { stroke-dashoffset:68; opacity:0 } 22% { opacity:1 } 40% { stroke-dashoffset:0 } 93% { stroke-dashoffset:0; opacity:1 } 99%,100% { opacity:0 } }
 
     .face { opacity:0; animation: faceSeq 9s ease-in-out infinite; }
-    @keyframes faceSeq { 0%,40% { opacity:0 } 54% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
+    @keyframes faceSeq { 0%,40% { opacity:0 } 52% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
 
-    .fillet { opacity:0; animation: filletSeq 9s ease-in-out infinite; }
-    @keyframes filletSeq { 0%,55% { opacity:0 } 63% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
+    /* 圆角高亮弧线：先描出来，再一直亮着 */
+    .fillet { stroke-dasharray: 20; animation: filletSeq 9s ease-out infinite; }
+    @keyframes filletSeq {
+      0%,56% { stroke-dashoffset:20; opacity:0 }
+      57% { stroke-dashoffset:20; opacity:1 }
+      64% { stroke-dashoffset:0; opacity:1 }
+      80% { stroke-dashoffset:0; opacity:1 }
+      88% { stroke-dashoffset:0; opacity:.45 }
+      99%,100% { stroke-dashoffset:0; opacity:0 }
+    }
+
+    /* R12 标注 */
+    .rcall { opacity:0; animation: rcallSeq 9s ease-out infinite; }
+    @keyframes rcallSeq { 0%,58% { opacity:0 } 64% { opacity:1 } 80% { opacity:1 } 86%,100% { opacity:0 } }
 
     .dim { opacity:0; animation: dimSeq 9s ease-in-out infinite; }
-    @keyframes dimSeq { 0%,76% { opacity:0 } 83% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
+    @keyframes dimSeq { 0%,80% { opacity:0 } 85% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
 
     .vtx { opacity:0; animation: vtxSeq 9s ease-in-out infinite; }
-    @keyframes vtxSeq { 0%,40% { opacity:0 } 50% { opacity:1 } 93% { opacity:1 } 99%,100% { opacity:0 } }
+    /* 尖角顶点：倒角完成后就不存在了，随圆角淡出 */
+    @keyframes vtxSeq { 0%,40% { opacity:0 } 50% { opacity:1 } 56% { opacity:1 } 63%,100% { opacity:0 } }
 
     .lbl { opacity:0; }
     .l1 { animation: l1 9s linear infinite; }
-    @keyframes l1 { 0% { opacity:0 } 3% { opacity:1 } 17% { opacity:1 } 21%,100% { opacity:0 } }
+    @keyframes l1 { 0% { opacity:0 } 3% { opacity:1 } 18% { opacity:1 } 22%,100% { opacity:0 } }
     .l2 { animation: l2 9s linear infinite; }
-    @keyframes l2 { 0%,21% { opacity:0 } 25% { opacity:1 } 50% { opacity:1 } 54%,100% { opacity:0 } }
+    @keyframes l2 { 0%,22% { opacity:0 } 26% { opacity:1 } 51% { opacity:1 } 55%,100% { opacity:0 } }
     .l3 { animation: l3 9s linear infinite; }
-    @keyframes l3 { 0%,54% { opacity:0 } 58% { opacity:1 } 74% { opacity:1 } 78%,100% { opacity:0 } }
+    @keyframes l3 { 0%,55% { opacity:0 } 58% { opacity:1 } 80% { opacity:1 } 84%,100% { opacity:0 } }
     .l4 { animation: l4 9s linear infinite; }
-    @keyframes l4 { 0%,78% { opacity:0 } 82% { opacity:1 } 94% { opacity:1 } 98%,100% { opacity:0 } }
+    @keyframes l4 { 0%,82% { opacity:0 } 85% { opacity:1 } 94% { opacity:1 } 98%,100% { opacity:0 } }
 
     .pill { opacity:0; animation: rise 0.8s cubic-bezier(.2,.7,.3,1) forwards; }
     .p1 { animation-delay: .55s } .p2 { animation-delay: .70s } .p3 { animation-delay: .85s } .p4 { animation-delay: 1.0s }
@@ -106,32 +129,85 @@
   <ellipse class="glow" cx="778" cy="105" rx="130" ry="105" fill="url(#glow)"/>
 
   <g class="float">
-    <!-- 面（拉伸完成后淡入） -->
+   <g class="zoom">
+    <!-- 面（拉伸完成后淡入，圆角时跟着内缩） -->
     <g class="face">
-      <polygon points="690,80 810,80 865,40 745,40" fill="#7aa2f7" fill-opacity="0.20"/>
-      <polygon points="810,170 865,130 865,40 810,80" fill="#7aa2f7" fill-opacity="0.13"/>
-      <rect x="690" y="80" width="120" height="90" fill="#7aa2f7" fill-opacity="0.07"/>
+      <polygon points="690,80 810,80 865,40 745,40" fill="#7aa2f7" fill-opacity="0.20">
+        <animate attributeName="points" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.64;1"
+                 values="690,80 810,80 865,40 745,40; 690,80 810,80 865,40 745,40; 693.5,83.5 806.5,83.5 861.5,43.5 748.5,43.5; 693.5,83.5 806.5,83.5 861.5,43.5 748.5,43.5"/>
+      </polygon>
+      <polygon points="810,170 865,130 865,40 810,80" fill="#7aa2f7" fill-opacity="0.13">
+        <animate attributeName="points" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.64;1"
+                 values="810,170 865,130 865,40 810,80; 810,170 865,130 865,40 810,80; 806.5,166.5 861.5,126.5 861.5,43.5 806.5,83.5; 806.5,166.5 861.5,126.5 861.5,43.5 806.5,83.5"/>
+      </polygon>
+      <rect x="690" y="80" width="120" height="90" rx="0" fill="#7aa2f7" fill-opacity="0.07">
+        <animate attributeName="rx" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.64;1" values="0;0;12;12"/>
+      </rect>
     </g>
 
-    <!-- 拉伸方向的四条棱 -->
+    <!-- 拉伸方向的四条棱：倒角后各自平移到圆弧切点，不再悬空在尖角上 -->
     <g stroke="#7aa2f7" stroke-width="1.8" stroke-linecap="round" fill="none">
-      <line class="edge" x1="690" y1="170" x2="745" y2="130"/>
-      <line class="edge" x1="810" y1="170" x2="865" y2="130"/>
-      <line class="edge" x1="810" y1="80"  x2="865" y2="40"/>
-      <line class="edge" x1="690" y1="80"  x2="745" y2="40"/>
+      <line class="edge" x1="690" y1="170" x2="745" y2="130">
+        <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+                          keyTimes="0;0.57;0.64;1" values="0 0;0 0;3.5 -3.5;3.5 -3.5"/>
+      </line>
+      <line class="edge" x1="810" y1="170" x2="865" y2="130">
+        <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+                          keyTimes="0;0.57;0.64;1" values="0 0;0 0;-3.5 -3.5;-3.5 -3.5"/>
+      </line>
+      <line class="edge" x1="810" y1="80"  x2="865" y2="40">
+        <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+                          keyTimes="0;0.57;0.64;1" values="0 0;0 0;-3.5 3.5;-3.5 3.5"/>
+      </line>
+      <line class="edge" x1="690" y1="80"  x2="745" y2="40">
+        <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+                          keyTimes="0;0.57;0.64;1" values="0 0;0 0;3.5 3.5;3.5 3.5"/>
+      </line>
     </g>
 
-    <!-- 背面轮廓 -->
-    <path class="back" d="M745 130 H865 V40 H745 Z" fill="none" stroke="#7aa2f7" stroke-width="1.8" stroke-linejoin="round"/>
-    <!-- 正面草图轮廓 -->
-    <path class="front" d="M690 170 H810 V80 H690 Z" fill="none" stroke="#7dcfff" stroke-width="2.4" stroke-linejoin="round"/>
+    <!-- 背面轮廓（同步倒圆角） -->
+    <rect class="back" x="745" y="40" width="120" height="90" rx="0" fill="none" stroke="#7aa2f7" stroke-width="1.8">
+      <animate attributeName="rx" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.64;1" values="0;0;12;12"/>
+    </rect>
 
-    <!-- 圆角高亮 -->
-    <g class="fillet" stroke="#9ece6a" stroke-width="2.6" fill="none" stroke-linecap="round">
-      <path d="M690 92 A12 12 0 0 1 702 80"/>
-      <path d="M798 80 A12 12 0 0 1 810 92"/>
-      <path d="M810 158 A12 12 0 0 1 798 170"/>
-      <path d="M702 170 A12 12 0 0 1 690 158"/>
+    <!-- 正面草图轮廓：尖角 → 圆角的真实倒角 -->
+    <rect class="front" x="690" y="80" width="120" height="90" rx="0" fill="none" stroke="#7dcfff" stroke-width="2.4">
+      <animate attributeName="rx" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.64;1" values="0;0;12;12"/>
+    </rect>
+
+    <!-- 圆角处的扩散光圈 -->
+    <g fill="none" stroke="#9ece6a" stroke-width="2">
+      <circle cx="702" cy="92" r="12">
+        <animate attributeName="r" dur="9s" repeatCount="indefinite" keyTimes="0;0.57;0.70;1" values="12;12;34;34"/>
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.56;0.60;0.72;1" values="0;0;0.9;0;0"/>
+      </circle>
+      <circle cx="798" cy="92" r="12">
+        <animate attributeName="r" dur="9s" repeatCount="indefinite" keyTimes="0;0.585;0.715;1" values="12;12;34;34"/>
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.575;0.615;0.735;1" values="0;0;0.9;0;0"/>
+      </circle>
+      <circle cx="798" cy="158" r="12">
+        <animate attributeName="r" dur="9s" repeatCount="indefinite" keyTimes="0;0.60;0.73;1" values="12;12;34;34"/>
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.59;0.63;0.75;1" values="0;0;0.9;0;0"/>
+      </circle>
+      <circle cx="702" cy="158" r="12">
+        <animate attributeName="r" dur="9s" repeatCount="indefinite" keyTimes="0;0.615;0.745;1" values="12;12;34;34"/>
+        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.605;0.645;0.765;1" values="0;0;0.9;0;0"/>
+      </circle>
+    </g>
+
+    <!-- 四个圆角高亮弧（与倒角后的轮廓完全重合） -->
+    <g filter="url(#softGlow)" stroke="#9ece6a" stroke-width="3.2" fill="none" stroke-linecap="round">
+      <path class="fillet" d="M690 92 A12 12 0 0 1 702 80"/>
+      <path class="fillet" style="animation-delay:.14s" d="M798 80 A12 12 0 0 1 810 92"/>
+      <path class="fillet" style="animation-delay:.28s" d="M810 158 A12 12 0 0 1 798 170"/>
+      <path class="fillet" style="animation-delay:.42s" d="M702 170 A12 12 0 0 1 690 158"/>
+    </g>
+
+    <!-- R12 圆角标注引线（跟随模型缩放/浮动，尖端始终咬住角点） -->
+    <g class="rcall mono">
+      <path d="M693 84 L648 52 H618" fill="none" stroke="#9ece6a" stroke-width="1.2" stroke-opacity="0.85"/>
+      <circle cx="693" cy="84" r="2.6" fill="#9ece6a"/>
+      <text x="612" y="56" text-anchor="end" font-size="13" fill="#9ece6a">R12 圆角 FILLET</text>
     </g>
 
     <!-- 顶点 -->
@@ -153,16 +229,17 @@
       <line x1="810" y1="187" x2="810" y2="197"/>
       <text x="750" y="185" text-anchor="middle" font-size="10" fill="#7c86ad" stroke="none">120.00</text>
     </g>
+   </g>
   </g>
 
   <!-- 扫描光带 -->
   <g class="scan"><rect x="655" y="22" width="250" height="2.5" fill="url(#scanGrad)"/></g>
 
   <!-- 阶段标签 -->
-  <g class="mono" font-size="12" letter-spacing="2.6">
-    <text class="lbl l1" x="655" y="216" fill="#7dcfff">01 · SKETCH 草图</text>
-    <text class="lbl l2" x="655" y="216" fill="#7aa2f7">02 · EXTRUDE 拉伸</text>
-    <text class="lbl l3" x="655" y="216" fill="#9ece6a">03 · FILLET 圆角</text>
-    <text class="lbl l4" x="655" y="216" fill="#bb9af7">04 · SOLID 实体</text>
+  <g class="mono" letter-spacing="2.6">
+    <text class="lbl l1" x="655" y="216" font-size="12" fill="#7dcfff">01 · SKETCH 草图</text>
+    <text class="lbl l2" x="655" y="216" font-size="12" fill="#7aa2f7">02 · EXTRUDE 拉伸</text>
+    <text class="lbl l3" x="655" y="217" font-size="15" font-weight="600" fill="#9ece6a" filter="url(#softGlow)">03 · FILLET 圆角 ★</text>
+    <text class="lbl l4" x="655" y="216" font-size="12" fill="#bb9af7">04 · SOLID 实体</text>
   </g>
 </svg>
