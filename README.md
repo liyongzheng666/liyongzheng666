@@ -1,4 +1,5 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0e75b6,100:7c5cff&height=180&section=header&text=Li%20Yongzheng%20%C2%B7%20%E6%9D%8E%E6%B0%B8%E6%AD%A3&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20%2B%20CAD%20Kernel%20Algorithm%20Engineer&descAlignY=58&descSize=18" alt="header" />
+<!-- 头图：自绘 CAD 建模动画（草图 → 拉伸 → 圆角 → 实体，9s 循环）-->
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/hero.svg?v=1" alt="Li Yongzheng · AI + CAD Kernel Algorithm Engineer" />
 
 <h3 align="center">
   <a href="https://github.com/liyongzheng666">
@@ -11,7 +12,7 @@
   <a href="https://github.com/liyongzheng666"><img src="https://img.shields.io/badge/role-CAD%20Kernel%20Algorithm-0e75b6?style=flat" alt="role" /></a>
 </p>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 🧑‍💻 About me
 
@@ -28,7 +29,12 @@
 >
 > Building an Agent that **auto-detects defects in geometric modeling kernels** — verification loops · degenerate-input defense · context injection.
 
----
+<!-- Agent 流水线：数据流动动画 -->
+<p align="center">
+  <img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/pipeline.svg?v=1" alt="kernel defect-detection agent pipeline" />
+</p>
+
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### ✨ Featured Projects
 
@@ -53,14 +59,14 @@
   </tr>
 </table>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 🛠️ Skills & Tools
 
 <table>
   <tr>
     <td width="52%" align="center" valign="middle">
-      <img width="100%" src="https://quickchart.io/chart?c=%7B%22type%22%3A%22radar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%5B%22Feature%22%2C%22Modeling%22%5D%2C%22Parametric%22%2C%5B%22Direct%22%2C%22Modeling%22%5D%2C%5B%22Geometry%22%2C%22Algorithms%22%5D%2C%22C%2B%2B%22%2C%5B%22AI+%2F%22%2C%22Python%22%5D%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B90%2C90%2C85%2C84%2C88%2C83%5D%2C%22borderColor%22%3A%22%237aa2f7%22%2C%22backgroundColor%22%3A%22rgba%28122%2C162%2C247%2C0.35%29%22%2C%22borderWidth%22%3A2%2C%22pointBackgroundColor%22%3A%22%23bb9af7%22%2C%22pointBorderColor%22%3A%22%23bb9af7%22%2C%22pointRadius%22%3A3%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22legend%22%3A%7B%22display%22%3Afalse%7D%7D%2C%22scales%22%3A%7B%22r%22%3A%7B%22min%22%3A0%2C%22max%22%3A100%2C%22ticks%22%3A%7B%22display%22%3Afalse%2C%22stepSize%22%3A25%7D%2C%22grid%22%3A%7B%22color%22%3A%22rgba%28169%2C177%2C214%2C0.25%29%22%7D%2C%22angleLines%22%3A%7B%22color%22%3A%22rgba%28169%2C177%2C214%2C0.25%29%22%7D%2C%22pointLabels%22%3A%7B%22color%22%3A%22%23c0caf5%22%2C%22font%22%3A%7B%22size%22%3A13%7D%7D%7D%7D%7D%7D&backgroundColor=%231a1b27&width=430&height=300&version=4" alt="skill radar" />
+      <img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/radar.svg?v=1" alt="skill radar" />
     </td>
     <td width="48%" align="center" valign="middle">
       <img src="https://skillicons.dev/icons?i=cpp,python,c,cmake,git,linux,qt,vim&perline=4" alt="tools" />
@@ -68,7 +74,7 @@
   </tr>
 </table>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 🤖 AI Tools I Use Daily
 
@@ -81,7 +87,7 @@
   <a href="https://gemini.google.com"><img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" /></a>
 </p>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 📊 GitHub Stats
 
@@ -99,7 +105,7 @@
   <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=liyongzheng666&theme=tokyo-night&hide_border=true&area=true&v=2" alt="activity graph" />
 </p>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 🐍 Contribution Snake
 
@@ -111,7 +117,7 @@
   </picture>
 </p>
 
----
+<img width="100%" src="https://raw.githubusercontent.com/liyongzheng666/liyongzheng666/main/assets/divider.svg?v=1" alt="" />
 
 ### 🔗 Connect
 
@@ -120,8 +126,8 @@
   <a href="mailto:zk545791580@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white" /></a>
 </p>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cff,100:0e75b6&height=120&section=footer" alt="footer" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:7c5cff,50:0e75b6,100:7dcfff&height=130&section=footer&animation=twinkling" alt="footer" />
 
 <p align="center"><sub>⚡ Build kernels · ship fast · stay curious</sub></p>
 
-<!-- Snake & stats auto-refresh every 12h via GitHub Actions · last touched 2026-06-17 (rev2) -->
+<!-- Snake & stats auto-refresh every 12h via GitHub Actions · last touched 2026-08-12 (rev3 · animated SVG assets) -->

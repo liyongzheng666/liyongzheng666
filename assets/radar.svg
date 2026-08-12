@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="300" viewBox="0 0 430 300" role="img" aria-label="Skill radar">
+  <defs>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7dcfff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#bb9af7" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7dcfff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#7dcfff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .f { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif; }
+    .mono { font-family: "SFMono-Regular", "JetBrains Mono", Consolas, monospace; }
+
+    .ring { opacity: 0; animation: ringIn .7s ease-out forwards; }
+    @keyframes ringIn { to { opacity: 1 } }
+    .r1 { animation-delay: .05s } .r2 { animation-delay: .15s } .r3 { animation-delay: .25s } .r4 { animation-delay: .35s }
+
+    .poly {
+      transform-origin: 215px 160px;
+      transform: scale(0);
+      animation: grow 1.1s .35s cubic-bezier(.34,1.56,.64,1) forwards, breathe 5s 1.6s ease-in-out infinite;
+    }
+    @keyframes grow { to { transform: scale(1) } }
+    @keyframes breathe { 0%,100% { transform: scale(1) } 50% { transform: scale(1.035) } }
+
+    .sweep { transform-origin: 215px 160px; animation: spin 7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg) } }
+
+    .lab { opacity: 0; animation: ringIn .6s 1.0s ease-out forwards; }
+  </style>
+
+  <rect width="430" height="300" rx="10" fill="#1a1b27"/>
+  <text class="mono" x="18" y="26" font-size="10" letter-spacing="2.4" fill="#565f89">SKILL PROFILE</text>
+
+  <!-- 网格环 -->
+  <g fill="none" stroke="#a9b1d6" stroke-opacity="0.22" stroke-width="1">
+    <polygon class="ring r1" points="215,133.75 237.7,146.88 237.7,173.13 215,186.25 192.3,173.13 192.3,146.88"/>
+    <polygon class="ring r2" points="215,107.5 260.46,133.75 260.46,186.25 215,212.5 169.54,186.25 169.54,133.75"/>
+    <polygon class="ring r3" points="215,81.25 283.16,120.63 283.16,199.38 215,238.75 146.84,199.38 146.84,120.63"/>
+    <polygon class="ring r4" points="215,55 305.93,107.5 305.93,212.5 215,265 124.07,212.5 124.07,107.5" stroke-opacity="0.34"/>
+  </g>
+
+  <!-- 轴线 -->
+  <g stroke="#a9b1d6" stroke-opacity="0.20" stroke-width="1">
+    <line x1="215" y1="160" x2="215" y2="55"/>
+    <line x1="215" y1="160" x2="305.93" y2="107.5"/>
+    <line x1="215" y1="160" x2="305.93" y2="212.5"/>
+    <line x1="215" y1="160" x2="215" y2="265"/>
+    <line x1="215" y1="160" x2="124.07" y2="212.5"/>
+    <line x1="215" y1="160" x2="124.07" y2="107.5"/>
+  </g>
+
+  <!-- 雷达扫描光束 -->
+  <g class="sweep">
+    <path d="M215 160 L215 55 A105 105 0 0 1 295.43 92.5 Z" fill="url(#sweepGrad)"/>
+    <line x1="215" y1="160" x2="215" y2="55" stroke="#7dcfff" stroke-opacity="0.55" stroke-width="1.4"/>
+  </g>
+
+  <!-- 数据多边形 -->
+  <g class="poly">
+    <polygon points="215,65.5 296.84,112.75 292.29,204.63 215,248.2 134.98,206.2 139.53,116.42"
+             fill="url(#fill)" stroke="#7aa2f7" stroke-width="2.2" stroke-linejoin="round"/>
+    <g fill="#bb9af7">
+      <circle cx="215" cy="65.5" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="296.84" cy="112.75" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" begin="0.4s" repeatCount="indefinite"/></circle>
+      <circle cx="292.29" cy="204.63" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" begin="0.8s" repeatCount="indefinite"/></circle>
+      <circle cx="215" cy="248.2" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" begin="1.2s" repeatCount="indefinite"/></circle>
+      <circle cx="134.98" cy="206.2" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" begin="1.6s" repeatCount="indefinite"/></circle>
+      <circle cx="139.53" cy="116.42" r="3.4"><animate attributeName="r" values="3.4;5.2;3.4" dur="2.6s" begin="2.0s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+
+  <!-- 轴标签 -->
+  <g class="f lab" font-size="11" fill="#c0caf5">
+    <text x="215" y="42" text-anchor="middle">Feature Modeling</text>
+    <text x="315" y="104" text-anchor="start">Parametric</text>
+    <text x="315" y="216" text-anchor="start">Direct Modeling</text>
+    <text x="215" y="284" text-anchor="middle">Geometry Algorithms</text>
+    <text x="115" y="216" text-anchor="end">C++</text>
+    <text x="115" y="104" text-anchor="end">AI / Python</text>
+  </g>
+</svg>

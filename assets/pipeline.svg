@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="175" viewBox="0 0 900 175" role="img" aria-label="Kernel defect-detection agent pipeline">
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 L7 3.5 L0 7 Z" fill="#565f89"/>
+    </marker>
+  </defs>
+
+  <style>
+    .f { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", Roboto, sans-serif; }
+    .mono { font-family: "SFMono-Regular", "JetBrains Mono", Consolas, monospace; }
+
+    .flow { stroke-dasharray: 5 6; animation: flow .75s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -11 } }
+    .flowBack { stroke-dasharray: 5 6; animation: flowBack 1s linear infinite; }
+    @keyframes flowBack { to { stroke-dashoffset: 11 } }
+
+    .node { animation: pulse 3.2s ease-in-out infinite; }
+    .n1 { animation-delay: 0s } .n2 { animation-delay: .32s } .n3 { animation-delay: .64s }
+    .n4 { animation-delay: .96s } .n5 { animation-delay: 1.28s }
+    @keyframes pulse { 0%,100% { stroke-opacity:.40; fill-opacity:.06 } 18% { stroke-opacity:1; fill-opacity:.15 } 45% { stroke-opacity:.40; fill-opacity:.06 } }
+
+    .dot { animation: dot 3.2s cubic-bezier(.5,0,.5,1) infinite; }
+    .d1 { animation-delay: .16s } .d2 { animation-delay: .48s } .d3 { animation-delay: .80s } .d4 { animation-delay: 1.12s }
+    @keyframes dot { 0% { transform: translateX(0); opacity:0 } 8% { opacity:1 } 16% { transform: translateX(45px); opacity:1 } 22%,100% { transform: translateX(45px); opacity:0 } }
+
+    .rdot { animation: rdot 3.2s ease-in-out infinite; animation-delay: 1.5s; opacity: 0; }
+    @keyframes rdot { 0% { opacity:0 } 5% { opacity:1 } 30% { opacity:1 } 38%,100% { opacity:0 } }
+  </style>
+
+  <rect width="900" height="175" rx="10" fill="#1a1b27"/>
+  <text class="mono" x="18" y="26" font-size="10" letter-spacing="2.4" fill="#565f89">KERNEL DEFECT-DETECTION AGENT · 在研</text>
+
+  <!-- 连接线 -->
+  <g stroke="#565f89" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+    <line class="flow" x1="150" y1="92" x2="188" y2="92"/>
+    <line class="flow" x1="335" y1="92" x2="373" y2="92"/>
+    <line class="flow" x1="520" y1="92" x2="558" y2="92"/>
+    <line class="flow" x1="705" y1="92" x2="743" y2="92"/>
+  </g>
+
+  <!-- 流动的数据点 -->
+  <g fill="#7dcfff">
+    <circle class="dot d1" cx="152" cy="92" r="3.2"/>
+    <circle class="dot d2" cx="337" cy="92" r="3.2"/>
+    <circle class="dot d3" cx="522" cy="92" r="3.2"/>
+    <circle class="dot d4" cx="707" cy="92" r="3.2"/>
+  </g>
+
+  <!-- 节点 -->
+  <g class="f">
+    <g>
+      <rect class="node n1" x="10" y="68" width="140" height="48" rx="9" fill="#7dcfff" stroke="#7dcfff" stroke-width="1.4"/>
+      <text x="80" y="90" text-anchor="middle" font-size="13" fill="#c0caf5">建模输入</text>
+      <text class="mono" x="80" y="105" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#7c86ad">MODEL INPUT</text>
+    </g>
+    <g>
+      <rect class="node n2" x="195" y="68" width="140" height="48" rx="9" fill="#e0af68" stroke="#e0af68" stroke-width="1.4"/>
+      <text x="265" y="90" text-anchor="middle" font-size="13" fill="#c0caf5">退化输入防御</text>
+      <text class="mono" x="265" y="105" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#7c86ad">DEGENERATE DEFENSE</text>
+    </g>
+    <g>
+      <rect class="node n3" x="380" y="68" width="140" height="48" rx="9" fill="#bb9af7" stroke="#bb9af7" stroke-width="1.4"/>
+      <text x="450" y="90" text-anchor="middle" font-size="13" fill="#c0caf5">缺陷排查 Agent</text>
+      <text class="mono" x="450" y="105" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#7c86ad">DEFECT AGENT</text>
+    </g>
+    <g>
+      <rect class="node n4" x="565" y="68" width="140" height="48" rx="9" fill="#9ece6a" stroke="#9ece6a" stroke-width="1.4"/>
+      <text x="635" y="90" text-anchor="middle" font-size="13" fill="#c0caf5">验证循环</text>
+      <text class="mono" x="635" y="105" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#7c86ad">VERIFICATION LOOP</text>
+    </g>
+    <g>
+      <rect class="node n5" x="750" y="68" width="140" height="48" rx="9" fill="#7aa2f7" stroke="#7aa2f7" stroke-width="1.4"/>
+      <text x="820" y="90" text-anchor="middle" font-size="13" fill="#c0caf5">缺陷报告</text>
+      <text class="mono" x="820" y="105" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#7c86ad">DEFECT REPORT</text>
+    </g>
+  </g>
+
+  <!-- 回环：上下文注入 -->
+  <path class="flowBack" d="M635 116 V134 Q635 144 625 144 H460 Q450 144 450 134 V120"
+        fill="none" stroke="#565f89" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <circle class="rdot" r="3.2" fill="#9ece6a">
+    <animateMotion dur="3.2s" begin="1.5s" repeatCount="indefinite"
+                   path="M635 116 V134 Q635 144 625 144 H460 Q450 144 450 134 V120"/>
+  </circle>
+  <text class="mono" x="542" y="164" text-anchor="middle" font-size="9.5" letter-spacing="1.2" fill="#565f89">CONTEXT INJECTION · 上下文注入</text>
+</svg>
